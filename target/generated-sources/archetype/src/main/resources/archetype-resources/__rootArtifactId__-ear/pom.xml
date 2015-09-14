@@ -30,18 +30,18 @@
             <defaultLibBundleDir>lib</defaultLibBundleDir>
 <modules>
             <!-- 4.5.1. Include Java Module. -->
-            <javaModule>
-            <groupId>${project.groupId}.util</groupId>
+            <jarModule>
+            <groupId>${groupId}.util</groupId>
           <artifactId>${rootArtifactId}-util</artifactId>
-           </javaModule>
+           </jarModule>
             <!-- 4.5.2. Include EJB Module. -->
             <ejbModule>
-          <groupId>${project.groupId}.ejb</groupId>
+          <groupId>${groupId}.ejb</groupId>
             <artifactId>${rootArtifactId}-ejb</artifactId>
             </ejbModule>
             <!-- 4.5.3. Include Web Application Module. -->
             <webModule>
-            <groupId>${project.groupId}.web</groupId>
+            <groupId>${groupId}.web</groupId>
             <artifactId>${rootArtifactId}-war</artifactId>
            <contextRoot>${webContext}</contextRoot>          
             </webModule>

@@ -30,18 +30,18 @@
             <defaultLibBundleDir>lib</defaultLibBundleDir>
 <modules>
             <!-- 4.5.1. Include Java Module. -->
-            <javaModule>
-            <groupId>${project.groupId}.util</groupId>
+            <jarModule>
+            <groupId>archetype.it.util</groupId>
           <artifactId>basic-util</artifactId>
-           </javaModule>
+           </jarModule>
             <!-- 4.5.2. Include EJB Module. -->
             <ejbModule>
-          <groupId>${project.groupId}.ejb</groupId>
+          <groupId>archetype.it.ejb</groupId>
             <artifactId>basic-ejb</artifactId>
             </ejbModule>
             <!-- 4.5.3. Include Web Application Module. -->
             <webModule>
-            <groupId>${project.groupId}.web</groupId>
+            <groupId>archetype.it.web</groupId>
             <artifactId>basic-war</artifactId>
            <contextRoot>basic</contextRoot>          
             </webModule>
