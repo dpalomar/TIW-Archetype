@@ -42,7 +42,7 @@
             <!-- 4.5.3. Include Web Application Module. -->
             <webModule>
             <groupId>${groupId}.web</groupId>
-            <artifactId>${rootArtifactId}-war</artifactId>
+            <artifactId>${rootArtifactId}-web</artifactId>
            <contextRoot>${webContext}</contextRoot>          
             </webModule>
           </modules>
