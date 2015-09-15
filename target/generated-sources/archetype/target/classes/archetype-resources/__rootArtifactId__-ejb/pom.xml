@@ -9,10 +9,10 @@
     </parent>
 
     <groupId>${groupId}.ejb</groupId>
-    <artifactId>${rootArtifactId}-ejb</artifactId>
+    <artifactId>${artifactId}</artifactId>
     <packaging>ejb</packaging>
 
-    <name>${rootArtifactId}-ejb</name>
+    <name>__rootArtifactId__-ejb</name>
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
@@ -23,7 +23,7 @@
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
-            <version>6.0</version>
+           
             <scope>provided</scope>
         </dependency>
     </dependencies>

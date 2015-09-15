@@ -9,9 +9,9 @@
   </parent>
   <groupId>es.uc3m.tiw.util</groupId>
   <artifactId>__rootArtifactId__-util</artifactId>
-  <version>1.0</version>
+ 
   <name>__rootArtifactId__-util</name>
-  <url>http://maven.apache.org</url>
+  <url>http://www.uc3m.es</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
@@ -19,7 +19,7 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.12</version>
+     
       <scope>test</scope>
     </dependency>
   </dependencies>
