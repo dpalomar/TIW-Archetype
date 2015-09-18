@@ -10,7 +10,7 @@
   <artifactId>${rootArtifactId}-util</artifactId>
  
   <name>${rootArtifactId}-util</name>
-  <url>http://www.uc3m.es</url>
+  
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
