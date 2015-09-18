@@ -11,7 +11,7 @@
   <artifactId>__rootArtifactId__-util</artifactId>
  
   <name>__rootArtifactId__-util</name>
-  <url>http://www.uc3m.es</url>
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>

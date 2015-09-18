@@ -10,7 +10,6 @@
   <groupId>${groupId}.model</groupId>
   <artifactId>${rootArtifactId}-model</artifactId>
   <name>${rootArtifactId}-model</name>
-  
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	<jpa.version>1.0.0.Final</jpa.version>

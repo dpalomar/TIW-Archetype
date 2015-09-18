@@ -10,7 +10,6 @@
   <groupId>${groupId}.model</groupId>
   <artifactId>${artifactId}</artifactId>
   <name>__rootArtifactId__-model</name>
-  <url>http://www.uc3m.es</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	<jpa.version>1.0.0.Final</jpa.version>
