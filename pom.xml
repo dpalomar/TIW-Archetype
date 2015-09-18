@@ -656,7 +656,7 @@
 							<range>30</range>
 						</configuration>
 						<reports>
-							<!--<report>dev-activity</report> -->
+							<report>dev-activity</report> 
 							<report>file-activity</report>
 						</reports>
 					</reportSet>
