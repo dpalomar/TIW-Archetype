@@ -8,7 +8,28 @@
 	<name>TIW-Archetype</name>
 	<description>Archetype for rapid development. This archetype build a parent project with submodules like EAR, EJB, WAR, Util and Persistence model.
 	Useful for Internet Technologies for the web subject of Carlos III University. Computer Science</description>
+	
+
+
+	<organization>
+		<name>Universidad Carlos III de madrid</name>
+		<url>http://www.uc3m.es</url>
+	</organization>
+	<developers>
+		<developer>
+			<name>Your name</name>
+			<email>your@email</email>
+			<organization>TIW</organization>
+			<organizationUrl>http://www.dei.inf.uc3m.es</organizationUrl>
+			<roles>
+				<role>Developer</role>
+			</roles>
+		</developer>
+	</developers>
 	<properties>
+
+	<!-- GITHUB PAGES DEPLOY PROPERTIES -->
+	<github.global.server>github</github.global.server>
 			<!-- ======================== -->
 		<!-- PROJECT PROPERTIES -->
 		<!-- ======================== -->
@@ -64,10 +85,10 @@
 		<!-- CODE ANALYSIS PROPERTIES -->
 		<!-- ============================= -->
 		<!-- @OVERRIDE as needed -->
-		<maven-checkstyle-plugin.configLocation>${project.basedir}/code-analysis/checkstyle.xml
+		<maven-checkstyle-plugin.configLocation>../code-analysis/checkstyle.xml
 		</maven-checkstyle-plugin.configLocation>
 		<!-- @OVERRIDE as needed -->
-		<maven-pmd-plugin.configLocation>${project.basedir}/code-analysis/pmd.xml</maven-pmd-plugin.configLocation>
+		<maven-pmd-plugin.configLocation>../code-analysis/pmd.xml</maven-pmd-plugin.configLocation>
 		
 		<!-- ======================== -->
 		<!-- SITE DOC PROPERTIES -->
@@ -88,7 +109,7 @@
 			For GitHub, gh-pages; ] -->
 		<scm-publish.scmBranch>gh-pages</scm-publish.scmBranch>
 		<!-- @OVERRIDE [SCM location for documentation repository] -->
-		<scm-publish.pubScmUrl>scm:git:git@github.com:${repository.user}/${repository.name}.git</scm-publish.pubScmUrl>
+		<scm-publish.pubScmUrl>scm:git:https://${repository.domain}/${repository.user}/${repository.name}.git</scm-publish.pubScmUrl>
 		<scm-publish.siteDocOuputDirectory>${project.reporting.outputDirectory}</scm-publish.siteDocOuputDirectory>
 		
 				<!-- ========================== -->
@@ -114,18 +135,19 @@
 		<versions.skip>false</versions.skip>
 		
 	</properties>
+<url>https://${repository.domain}/${repository.user}/${repository.name}</url>
 		<scm>
-		<connection>scm:git:ssh://${repository.domain}/${repository.user}/${repository.name}.git</connection>
+		<connection>scm:git:https://${repository.domain}/${repository.user}/${repository.name}.git</connection>
 		<url>https://${repository.domain}/${repository.user}/${repository.name}</url>
-		<developerConnection>scm:git:ssh://${repository.domain}/${repository.user}/${repository.name}.git
+		<developerConnection>scm:git:https://${repository.domain}/${repository.user}/${repository.name}.git
         </developerConnection>
 		<tag>HEAD</tag>
 	</scm>
 		<prerequisites>
-		<!-- Would prefer 3.0.4+, but 3.0.3 will work -->
-		<maven>3.0.3</maven>
+		
+		<maven>3.2.0</maven>
 	</prerequisites>
-		<url>http://${repository.domain}/${repository.user}/${repository.name}</url>
+		
 	<inceptionYear>2015</inceptionYear>
 	
 		<issueManagement>
@@ -135,8 +157,9 @@
 	
 		<distributionManagement>
 		<site>
-			<id>site-docs</id>
-			<url>file://${site-docs.url}</url>
+   <id>github-pages-site</id>
+    <name>Deployment through GitHub's site deployment plugin</name>
+    <url>${project.version}</url>
 		</site>
 	</distributionManagement>
 	  <dependencyManagement>
@@ -403,6 +426,7 @@
 						<xrefLocation>${project.reporting.outputDirectory}/xref</xrefLocation>
 						<xrefTestLocation>${project.reporting.outputDirectory}/xref</xrefTestLocation>
 						<failOnViolation>false</failOnViolation>
+						<skipEmptyReport>false</skipEmptyReport>
 					</configuration>
 					<executions>
 						<execution>
@@ -488,6 +512,7 @@
 					</dependencies>
 					<configuration>
 						<attach>true</attach>
+						<skipDeploy>true</skipDeploy>
 
 					</configuration>
 					<executions>
@@ -793,6 +818,33 @@
 			</plugin>
 		</plugins>
 	</reporting>
+		<profiles>
+		<profile>
+			<id>reporting</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>com.github.github</groupId>
+						<artifactId>site-maven-plugin</artifactId>
+						<version>0.12</version>
+						<configuration>
+							<message>Creating site for ${project.version}</message>
+							<path>${project.distributionManagement.site.url}</path>
+							 <merge>true</merge>
+						</configuration>
+						<executions>
+							<execution>
+								<goals>
+									<goal>site</goal>
+								</goals>
+								<phase>site</phase>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+</profiles>
 	<modules>
 		<module>__rootArtifactId__-ejb</module>
 		<module>__rootArtifactId__-web</module>
